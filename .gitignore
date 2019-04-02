@@ -1,0 +1,7 @@
+build
+ppport.h
+U2F.so
+U2F.xsc
+*.deb
+*.1.pod
+*.1.gz

@@ -1,0 +1,17 @@
+Source: libpve-u2f-server-perl
+Section: perl
+Priority: optional
+Maintainer: Proxmox Support Team <support@proxmox.com>
+Build-Depends: debhelper (>= 10~),
+               libu2f-server-dev,
+Standards-Version: 3.9.8
+Homepage: https://www.proxmox.com/
+
+Package: libpve-u2f-server-perl
+Architecture: any
+Depends: perl (>= 5.20.1-5),
+         ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends},
+Description: Perl bindings for libu2f-server
+ This package contains libu2f-server perl binding used by Proxmox VE.
