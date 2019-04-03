@@ -3,7 +3,7 @@ include /usr/share/dpkg/architecture.mk
 
 PACKAGE=libpve-u2f-server-perl
 
-BUILDSRC := $(PACKAGE)-$(DEB_VERSION_UPSTREAM_REVISION)
+BUILDSRC := $(PACKAGE)-$(DEB_VERSION_EPOCH_UPSTREAM)
 
 DESTDIR=
 PREFIX=/usr
@@ -69,7 +69,7 @@ $(DSC): $(BUILDSRC)
 
 .PHONY: clean
 clean:
-	rm -rf *~ build *.deb *.changes *.buildinfo *.dsc *.tar.gz
+	rm -rf *~ ${BUILDSRC} *.deb *.changes *.buildinfo *.dsc *.tar.gz
 	find . -name '*~' -exec rm {} ';'
 
 .PHONY: distclean
