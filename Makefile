@@ -52,7 +52,7 @@ install: PVE/U2F.pm U2F.so
 $(BUILDSRC):
 	rm -rf $(BUILDSRC)
 	mkdir $(BUILDSRC)
-	rsync -a debian Makefile PVE U2F.xs $(BUILDSRC)/
+	rsync -a debian Makefile PVE U2F.xs base64.h $(BUILDSRC)/
 	echo "git clone git://git.proxmox.com/git/libpve-u2f-server-perl.git\\ngit checkout $(GITVERSION)" > $(BUILDSRC)/debian/SOURCE
 
 .PHONY: deb

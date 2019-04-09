@@ -7,6 +7,8 @@
 
 #include <u2f-server.h>
 
+#include "base64.h"
+
 MODULE = PVE::U2F		PACKAGE = PVE::U2F
 
 #// Context creation and destruction
@@ -126,9 +128,11 @@ registration_verify_impl(ctx, response, kh=&PL_sv_undef, pk=&PL_sv_undef)
 		u2fs_rc rc = u2fs_registration_verify(*pctx, response, &result);
 		if (rc == U2FS_OK) {
 			const char *keyHandle = u2fs_get_registration_keyHandle(result);
-			const char *publicKey = u2fs_get_registration_publicKey(result);
+			const char *publicKey_raw = u2fs_get_registration_publicKey(result);
+			char *publicKey = base64(publicKey_raw, U2FS_PUBLIC_KEY_LEN);
 			sv_setpv(kh, keyHandle);
 			sv_setpv(pk, publicKey);
+			free(publicKey); publicKey = NULL;
 			u2fs_free_reg_res(result);
 		}
 		RETVAL = rc;
