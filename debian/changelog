@@ -1,3 +1,10 @@
+libpve-u2f-server-perl (1.0-2) unstable; urgency=medium
+
+  * registration: only pass already base64 decoded public key to perl, else it
+    may be truncated
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 09 Apr 2019 12:49:13 +0200
+
 libpve-u2f-server-perl (1.0-1) unstable; urgency=low
 
   * initial package
