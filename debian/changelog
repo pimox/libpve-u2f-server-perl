@@ -1,3 +1,9 @@
+libpve-u2f-server-perl (1.1-1) pve; urgency=medium
+
+  * rebuild for Debian Buster / PVE 6.0
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 21 May 2019 20:28:22 +0200
+
 libpve-u2f-server-perl (1.0-2) unstable; urgency=medium
 
   * registration: only pass already base64 decoded public key to perl, else it
