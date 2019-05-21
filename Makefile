@@ -78,4 +78,4 @@ distclean: clean
 
 .PHONY: upload
 upload: $$DEB)
-	tar cf - $(DEB) | ssh repoman@repo.proxmox.com -- upload --product pve --dist stretch --arch $(ARCH)
+	tar cf - $(DEB) | ssh repoman@repo.proxmox.com -- upload --product pve --dist buster --arch $(DEB_BUILD_ARCH)
